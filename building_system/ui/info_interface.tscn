@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq4f7napqxrlq"]
+
+[ext_resource type="Script" path="res://building_system/scripts/ui/info_interface.gd" id="1_oi3n8"]
+
+[node name="InfoInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_oi3n8")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Level"
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildMode" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Build Mode"
+vertical_alignment = 1
+
+[node name="BuildModeLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "off"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DemolitionMode" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Demolition Mode"
+vertical_alignment = 1
+
+[node name="DemolitionModeLabel" type="Label" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "off"
+horizontal_alignment = 1
+vertical_alignment = 1

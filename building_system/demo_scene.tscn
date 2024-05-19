@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://d244v7distc1p"]
+
+[ext_resource type="PackedScene" uid="uid://hg3h4ro1cmb7" path="res://building_system/scenes/building_system.tscn" id="1_85hb8"]
+[ext_resource type="Texture2D" uid="uid://bof5rhysl4637" path="res://building_system/assets/textures/grass.png" id="2_0urqu"]
+[ext_resource type="Script" path="res://building_system/scripts/utils/camera_controller.gd" id="2_e127x"]
+[ext_resource type="Resource" uid="uid://c77u23wccg17v" path="res://building_system/assets/resources/survival_objects_library.tres" id="2_mbfq0"]
+[ext_resource type="PackedScene" uid="uid://bs2jm62cmkbrk" path="res://addons/instant-realistic-light/light_scene.tscn" id="5_u0mvi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eur3t"]
+albedo_color = Color(0.717647, 0.603922, 0.388235, 1)
+albedo_texture = ExtResource("2_0urqu")
+uv1_scale = Vector3(200, 200, 200)
+texture_filter = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_58nb6"]
+material = SubResource("StandardMaterial3D_eur3t")
+size = Vector2(200, 200)
+subdivide_width = 200
+subdivide_depth = 200
+
+[node name="Root" type="Node3D"]
+
+[node name="BuildingSystem" parent="." node_paths=PackedStringArray("main_camera") instance=ExtResource("1_85hb8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.064, 0)
+main_camera = NodePath("../CameraController/Camera3D")
+buildable_object_library = ExtResource("2_mbfq0")
+
+[node name="GroundVisual" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+mesh = SubResource("PlaneMesh_58nb6")
+
+[node name="CameraController" type="Node3D" parent="."]
+script = ExtResource("2_e127x")
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 0)
+current = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("5_u0mvi")]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://hg3h4ro1cmb7"]
+
+[ext_resource type="Script" path="res://building_system/scripts/building_system.gd" id="1_4cwqb"]
+[ext_resource type="PackedScene" uid="uid://dvvdguo808eep" path="res://building_system/scenes/mouse_object.tscn" id="2_mpfsy"]
+[ext_resource type="PackedScene" uid="uid://belprlxy4ieic" path="res://building_system/ui/object_interface.tscn" id="3_3dnjw"]
+[ext_resource type="PackedScene" uid="uid://14tp0fftlq7s" path="res://building_system/ui/main_menu_interface.tscn" id="4_2hu2l"]
+[ext_resource type="PackedScene" uid="uid://bgtqp8sphodlc" path="res://building_system/ui/load_interface.tscn" id="5_b5f06"]
+[ext_resource type="PackedScene" uid="uid://coeq37hxl5rtx" path="res://building_system/ui/save_interface.tscn" id="6_s71mp"]
+[ext_resource type="PackedScene" uid="uid://dq4f7napqxrlq" path="res://building_system/ui/info_interface.tscn" id="7_w8lel"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lq1a"]
+albedo_color = Color(0.105882, 0.611765, 0.603922, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ja617"]
+material = SubResource("StandardMaterial3D_5lq1a")
+radius = 0.02
+height = 0.5
+
+[node name="BuildingSystem" type="Node3D"]
+script = ExtResource("1_4cwqb")
+
+[node name="GridContainer" type="Node3D" parent="."]
+
+[node name="FreeObjectsContainer" type="Node3D" parent="."]
+
+[node name="GroundMouseDebug" type="Node3D" parent="."]
+visible = false
+
+[node name="DebugMesh" type="MeshInstance3D" parent="GroundMouseDebug"]
+mesh = SubResource("CapsuleMesh_ja617")
+
+[node name="MouseObject" parent="." instance=ExtResource("2_mpfsy")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ObjectInterface" parent="UI" instance=ExtResource("3_3dnjw")]
+
+[node name="MainMenuInterface" parent="UI" instance=ExtResource("4_2hu2l")]
+
+[node name="LoadInterface" parent="UI" instance=ExtResource("5_b5f06")]
+
+[node name="SaveInterface" parent="UI" instance=ExtResource("6_s71mp")]
+
+[node name="InfoInterface" parent="UI" instance=ExtResource("7_w8lel")]

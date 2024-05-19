@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BuildableResourceLibrary" load_steps=8 format=3 uid="uid://c77u23wccg17v"]
+
+[ext_resource type="Script" path="res://building_system/scripts/resources/buildable_resource_library.gd" id="1_hgna4"]
+[ext_resource type="Resource" uid="uid://bi1b6a1678tf" path="res://building_system/assets/resources/survival/campfire_pit.tres" id="1_nf1qu"]
+[ext_resource type="Resource" uid="uid://87yxs6d200bd" path="res://building_system/assets/resources/survival/chest.tres" id="2_im3tk"]
+[ext_resource type="Resource" uid="uid://dfjricxxnlwjq" path="res://building_system/assets/resources/survival/fence_doorway.tres" id="3_mdy76"]
+[ext_resource type="Resource" uid="uid://dinfj36bsf7xw" path="res://building_system/assets/resources/survival/fence_fortified.tres" id="4_oao3k"]
+[ext_resource type="Resource" uid="uid://d030knha6j0r1" path="res://building_system/assets/resources/survival/floor.tres" id="5_7xsuj"]
+[ext_resource type="Resource" uid="uid://b6k6pv2wkad1c" path="res://building_system/assets/resources/survival/floor_old.tres" id="6_bujv1"]
+
+[resource]
+script = ExtResource("1_hgna4")
+buildable_objects = Array[Resource("res://building_system/scripts/resources/buildable_resource.gd")]([ExtResource("1_nf1qu"), ExtResource("2_im3tk"), ExtResource("3_mdy76"), ExtResource("4_oao3k"), ExtResource("5_7xsuj"), ExtResource("6_bujv1")])

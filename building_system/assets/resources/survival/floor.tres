@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BuildableResource" load_steps=4 format=3 uid="uid://d030knha6j0r1"]
+
+[ext_resource type="PackedScene" uid="uid://c2x7j3kxlbrft" path="res://building_system/assets/scenes/survival/floor.tscn" id="1_7nomc"]
+[ext_resource type="Script" path="res://building_system/scripts/resources/buildable_resource.gd" id="2_1aq4s"]
+[ext_resource type="Texture2D" uid="uid://cknxaav4y0q0j" path="res://building_system/assets/textures/survival/floor.png" id="3_tubbe"]
+
+[resource]
+script = ExtResource("2_1aq4s")
+name = "floor"
+description = ""
+texture_image = ExtResource("3_tubbe")
+object_3d_model = ExtResource("1_7nomc")
+snap_behaviour = 0
+size = Vector3i(1, 0, 1)

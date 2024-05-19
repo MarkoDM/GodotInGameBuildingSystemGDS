@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvvdguo808eep"]
+
+[ext_resource type="Script" path="res://building_system/scripts/mouse_object.gd" id="1_fsh3j"]
+
+[node name="MouseObject" type="Node3D"]
+script = ExtResource("1_fsh3j")
+
+[node name="GridContainer" type="Node3D" parent="."]
+
+[node name="ObjectContainer" type="Node3D" parent="."]

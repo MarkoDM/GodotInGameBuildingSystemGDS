@@ -19,6 +19,6 @@ Thumbs.db
 bin/
 obj/
 # Addons (ignore unless you're developing the addon)
-addons/
+# addons/
 # If using VSCode, you might want to ignore the .vscode directory
 .vscode/
